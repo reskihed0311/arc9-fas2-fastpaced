@@ -6,16 +6,16 @@ SWEP.NoTPIKVMPos = true
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - FA:S Fast Paced"
-SWEP.SubCategory = "Pistols"
+SWEP.SubCategory = "Assault Rifles"
 SWEP.AdminOnly = false
-SWEP.Slot = 1
+SWEP.Slot = 2
 
 SWEP.RecoilKick = 0 -- Camera recoil
 
-SWEP.PrintName = "Glock-20"
+SWEP.PrintName = "M16A2"
 
 
-SWEP.Class = "Handgun"
+SWEP.Class = "Assault Carbine"
 
 
 SWEP.Credits = {   -- Number in end of title orders line in list (otherwise they will be in alphabet in menus). "_" will be replaced with space
@@ -23,22 +23,22 @@ SWEP.Credits = {   -- Number in end of title orders line in list (otherwise they
 }
 
 
-SWEP.Description = [[set later.]]
+SWEP.Description = [[temp.]]
 
 
 SWEP.UseHands = true -- Same as weapon_base
 
-SWEP.ViewModel = "models/weapons/pistols/arc9_fas2_glock20.mdl"
-SWEP.WorldModel = "models/weapons/w_pist_glock18.mdl"
+SWEP.ViewModel = "models/weapons/rifles/arc9_fas2_m16a2.mdl"
+SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
 
 
 
 SWEP.MirrorVMWM = true -- Use this to use the viewmodel as a worldmodel.
 
 SWEP.WorldModelOffset = {
-     Pos = Vector(-10, 5, 1), -- non tpik (while on ground, on npc etc)
+     Pos = Vector(-13, 5, -3), -- non tpik (while on ground, on npc etc)
      Ang = Angle(0, 0, 180),
-     TPIKPos = Vector(-15, 2, -2), -- arc9_tpik 1, you can make cool poses with it
+     TPIKPos = Vector(-13, 5, -3), -- arc9_tpik 1, you can make cool poses with it
      TPIKAng = Angle(0, 0, 180),
      Scale = 1
  }
@@ -49,14 +49,14 @@ SWEP.ViewModelFOVBase = 70-- Set to override viewmodel FOV
 
 
 
-SWEP.DamageMax = 34-- Damage done at point blank range
-SWEP.DamageMin = 10 -- Damage done at maximum range
+SWEP.DamageMax = 38 -- Damage done at point blank range
+SWEP.DamageMin = 30 -- Damage done at maximum range
 SWEP.ImpactForce = 0 -- Force that bullets apply on hit
 
 
-SWEP.RangeMin = 0 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 2500-- In Hammer units, how far bullets can travel before dealing DamageMin.
-SWEP.Distance = 5000 -- In Hammer units, how far bullets can travel, period.
+SWEP.RangeMin = -1 -- How far bullets retain their maximum damage for.
+SWEP.RangeMax = 7500-- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.Distance = 8000 -- In Hammer units, how far bullets can travel, period.
 
 
 SWEP.CurvedDamageScaling = false -- If true, damage will scale in a quadratic curve between RangeMin and RangeMax. If false, damage will scale linearly.
@@ -77,16 +77,16 @@ SWEP.DamageType = DMG_BULLET
 
 
 
---damage mults for pistols
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 2,
-    [HITGROUP_CHEST] = 1.25,
+    [HITGROUP_HEAD] = 1.1,
+    [HITGROUP_CHEST] = 1.05,
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 1,
     [HITGROUP_RIGHTARM] = 1,
     [HITGROUP_LEFTLEG] = 0.9,
     [HITGROUP_RIGHTLEG] = 0.9,
 }
+
 
 
 SWEP.NeverPhysBullet = true
@@ -107,10 +107,10 @@ SWEP.TracerSize = 5
 
 -------------------------- MAGAZINE
 
-SWEP.Ammo = "pistol" -- What ammo type this gun uses.
+SWEP.Ammo = "smg1" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 15 -- Self-explanatory.
+SWEP.ClipSize = 30 -- Self-explanatory.
 SWEP.SupplyLimit = 5 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
@@ -119,21 +119,21 @@ SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 SWEP.ReloadWhileSprint = true -- This weapon can reload while the user is sprinting.
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 
-SWEP.CanFireUnderwater = true -- This weapon can shoot while underwater.
+SWEP.CanFireUnderwater = false -- This weapon can shoot while underwater.
 
 
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 
---[[SWEP.DropMagazineModel = "models/mags/m9k_mag_1911.mdl" -- Set to a string or table to drop this magazine when reloading.
+--[[SWEP.DropMagazineModel = "models/mags/m9k_mag_honeybadger.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_hard2.wav", "physics/metal/weapon_impact_hard1.wav", "physics/metal/weapon_impact_hard3.wav"} -- Table of sounds a dropped magazine should play.
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineSkin = 0 -- Model skin of mag.
 SWEP.DropMagazineTime = nil
 SWEP.DropMagazineQCA = nil -- QC Attachment drop mag from, would drop from shell port if not defined
 SWEP.DropMagazinePos = Vector(-1.5, 1, 0) -- offsets
-SWEP.DropMagazineAng = Angle(90, 0, -90 )
+SWEP.DropMagazineAng = Angle(90, 0, 180 )
 SWEP.DropMagazineVelocity = Vector(0, -50, 0) -- Put something here if your anim throws the mag with force
 
 SWEP.BarrelLength = 0 -- Distance for nearwalling
@@ -144,7 +144,7 @@ SWEP.DryFireDelay = false -- Set to set time, otherwise uses animation length--]
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 1200
+SWEP.RPM = 950
 
 
 
@@ -158,9 +158,13 @@ SWEP.RPM = 1200
 -- n: n-round burst.
 SWEP.Firemodes = {
     {
+        Mode = 3,
+        -- add other attachment modifiers
+    },
+    {
         Mode = 1,
         -- add other attachment modifiers
-    }
+    },
 }
 
 -------------------------- RECOIL
@@ -176,11 +180,11 @@ SWEP.RecoilLookupTable = nil -- Use to set specific values for predictible recoi
 SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if we run out in the main table
 
 -- General recoil multiplier
-SWEP.Recoil = 1.5
+SWEP.Recoil = 1.1
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 1.5 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 2.2 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 0.79 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.2 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -193,12 +197,12 @@ SWEP.RecoilAutoControl = 0 -- Multiplier for automatic recoil control.
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.0005
+SWEP.Spread = 0.01 -- sperad ARs
 
-SWEP.SpreadAddMove = 0.03-- Applied when speed is equal to walking speed.
-SWEP.SpreadAddMidAir = 0.035 -- Applied when not touching the ground.
-SWEP.SpreadAddHipFire = 0.025 -- Applied when not sighted.
-SWEP.SpreadAddSighted = 0 -- Applied when sighted. Can be negative.
+SWEP.SpreadAddMove = 0.035-- Applied when speed is equal to walking speed.
+SWEP.SpreadAddMidAir = 0.040 -- Applied when not touching the ground.
+SWEP.SpreadAddHipFire = 0.015 -- Applied when not sighted.
+SWEP.SpreadAddSighted = -0.005 -- Applied when sighted. Can be negative.
 
 
 
@@ -215,8 +219,8 @@ SWEP.FreeAimRadiusMultSights = 0
 
 SWEP.SwayMultSights = 0
 
-SWEP.AimDownSightsTime = 0.25 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.05 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.20 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.10 -- How long it takes to go from sprinting to being able to fire.
 
 SWEP.MagnificationZoomSpeed = 1 -- Multiply how quickly the FOV adjusts itself when entering or exiting the sights, or when toggling from one sight to another.
 
@@ -225,11 +229,11 @@ SWEP.NoSprintWhenLocked = false -- You cannot sprint while reloading with this g
 
 
 
-SWEP.Speed = 1
+SWEP.Speed = 0.80
 
 SWEP.SpeedMult = 1
 SWEP.SpeedMultSights = 0.9
-SWEP.SpeedMultShooting = 0.9
+SWEP.SpeedMultShooting = 0.7
 
 
 SWEP.CanLean = false
@@ -239,15 +243,18 @@ SWEP.CanLean = false
 
 -------------------------- SOUNDS
 
+
+SWEP.Silencer = false -- Silencer installed or not?
+
 SWEP.ShootVolume = 125
 SWEP.ShootVolumeActual = 1
 SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 5 -- Not multiplied, but actually just added/subtracted.
 
 
-SWEP.ShootSound = "glock20/glock20_fire1.wav"                            -- Fire
+SWEP.ShootSound = "m16a2/m16a2_fire1.wav"                          -- Fire
 
-SWEP.ShootSoundSilenced = "glock20/glock20_suppressed_fire1.wav"                    -- Fire silenced
+SWEP.ShootSoundSilenced = "m16a2/m16a2_suppressed_fire1.wav"                    -- Fire silenced
 
 
 
@@ -277,7 +284,7 @@ SWEP.TriggerUpSound = ""
 SWEP.NoMuzzleEffect = false -- Disable muzzle effect entirely
 SWEP.NoFlash = false -- Disable light flash
 
-SWEP.MuzzleParticle = "muzzleflash_pistol" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "muzzleflash_famas" -- Used for some muzzle effects.
 
 SWEP.MuzzleEffect = "MuzzleFlash"
 SWEP.FastMuzzleEffect = nil
@@ -291,7 +298,7 @@ SWEP.AfterShotParticleDelay = 0.01 -- Delay before spawning the particle
 SWEP.ShellEffectCount = 1
 SWEP.NoShellEject = true
 
-SWEP.ShellModel = "models/shells/shell_9mm.mdl"
+SWEP.ShellModel = "models/shells/shell_556.mdl"
 
 
 SWEP.ShellSmoke = true
@@ -327,13 +334,13 @@ SWEP.BobWalkMult = 1 -- same but for all non sprint actions
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.381, -8.028, 0.639),
+    Pos = Vector(-4.193, -7.553, 0.819),
 }
 
 SWEP.HasSights = true
 
 -- Alternative "resting" position
-SWEP.ActivePos = Vector(-1, -2, -0.5)
+SWEP.ActivePos = Vector(-1, -2.5, -0.5)
 SWEP.ActiveAng = Angle(0, 0, -3)
 
 -- Position while walking/running (no sprint)
@@ -345,8 +352,8 @@ SWEP.CrouchPos = Vector(0, 0, 0)
 SWEP.CrouchAng = Angle(0, 0, -3)
 
 -- Position when sprinting or safe
-SWEP.RestPos = Vector(0, -2, -10)
-SWEP.RestAng = Angle(0, 70, 0)
+SWEP.RestPos = Vector(-1, -3, 2)
+SWEP.RestAng = Angle(15, -30, -15)
 
 
 
@@ -387,10 +394,10 @@ SWEP.HeightOverBore = 1
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "revolver"
-SWEP.HoldTypeSprint = "normal"
-SWEP.HoldTypeHolstered = "normal"
-SWEP.HoldTypeSights = "revolver"
+SWEP.HoldType = "ar2"
+SWEP.HoldTypeSprint = "passive"
+SWEP.HoldTypeHolstered = "passive"
+SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 SWEP.HoldTypeNPC = "ar2"
@@ -412,11 +419,7 @@ SWEP.NonTPIKAnimMelee = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 
 
 
-
 SWEP.Attachments = {
-
-
-
 }
 
 
@@ -459,26 +462,24 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         EventTable = {
-		{s = foley_fast, t = 0},
-            {s = "glock20/glock20_magout.wav", t = 0.48},
-			{s = "glock20/glock20_magin.wav", t = 1},
-			{s = foley_fast, t = 1.3},
-			{s = grip, t = 1.9},
-          
-        }
+		{s = "handling/generic_magpouch_smg1.wav" , t = 0},
+            {s = "m16a2/m16a2_magout.wav", t = 0.78},
+			{s = foley_fast , t = 0.9},
+			 {s = "m16a2/m16a2_magin.wav", t = 1.2},
+			 {s = foley_fast , t = 1.5},
+        },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         EventTable = {
-		    {s = foley_fast, t = 0},
-            {s = "glock20/glock20_magout_empty.wav", t = 0.38},
-			{s = "glock20/glock20_magin.wav", t = 1.42},
-			{s = "glock20/glock20_sliderelease.wav", t = 1.62},
-			{s = foley_fast, t = 1.9},
-			{s = grip, t = 2.8},
-      
-        }
-    },
+		    {s = grip, t = 0.1},
+            {s = "m16a2/m16a2_magout_empty.wav", t = 0.30},
+			{s = "m16a2/m16a2_magin.wav", t = 1.5},
+			{s = "m16a2/m16a2_boltcatch.wav", t = 1.95},
+			{s = grip, t = 2.2},
+        },
+	},
+    
     ["draw"] = {
         Source = "draw",
     },
@@ -490,5 +491,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster_empty",
-    },
+		}
     }
+    
