@@ -5,7 +5,7 @@ SWEP.Base = "arc9_base"
 SWEP.NoTPIKVMPos = true
 
 SWEP.Spawnable = true
-SWEP.Category = "ARC9 - Murderthon9000"
+SWEP.Category = "ARC9 - FA:S Fast Paced"
 SWEP.SubCategory = "Shotguns"
 SWEP.AdminOnly = false
 
@@ -13,10 +13,10 @@ SWEP.Slot = 3
 
 SWEP.RecoilKick = 0 -- Camera recoil
 
-SWEP.PrintName = "Browning Auto 5"
+SWEP.PrintName = "BM-16"
 
 
-SWEP.Class = "Semi Auto Shotgun"
+SWEP.Class = "Break action shotgun"
 
 
 SWEP.Credits = {   -- Number in end of title orders line in list (otherwise they will be in alphabet in menus). "_" will be replaced with space
@@ -29,7 +29,7 @@ SWEP.Description = [[set this later]]
 
 SWEP.UseHands = true -- Same as weapon_base
 
-SWEP.ViewModel = "models/weapons/arc9_m9k_browningauto5.mdl"
+SWEP.ViewModel = "models/weapons/shotguns/arc9_fas2_bm16.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
 
 
@@ -50,20 +50,20 @@ SWEP.ViewModelFOVBase = 70-- Set to override viewmodel FOV
 
 
 
-SWEP.DamageMax = 17 -- Damage done at point blank range
-SWEP.DamageMin = 10 -- Damage done at maximum range
+SWEP.DamageMax = 25 -- Damage done at point blank range
+SWEP.DamageMin = 3 -- Damage done at maximum range
 SWEP.ImpactForce = 0 -- Force that bullets apply on hit
 
 
 SWEP.RangeMin = 0 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 1000-- In Hammer units, how far bullets can travel before dealing DamageMin.
-SWEP.Distance = 2500 -- In Hammer units, how far bullets can travel, period.
+SWEP.RangeMax = 700-- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.Distance = 1500 -- In Hammer units, how far bullets can travel, period.
 
 
 SWEP.CurvedDamageScaling = false -- If true, damage will scale in a quadratic curve between RangeMin and RangeMax. If false, damage will scale linearly.
 
 
-SWEP.Num = 8 -- Number of bullets to shoot
+SWEP.Num = 10 -- Number of bullets to shoot
 
 
 SWEP.Penetration = 0 -- Units of wood that can be penetrated by this gun.
@@ -109,8 +109,8 @@ SWEP.TracerSize = 10
 
 SWEP.Ammo = "buckshot" -- What ammo type this gun uses.
 
-SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 6 -- Self-explanatory.
+SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.
+SWEP.ClipSize = 2 -- Self-explanatory.
 SWEP.SupplyLimit = 5 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
@@ -176,7 +176,7 @@ SWEP.RecoilLookupTable = nil -- Use to set specific values for predictible recoi
 SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if we run out in the main table
 
 -- General recoil multiplier
-SWEP.Recoil = 1.8
+SWEP.Recoil = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 2 -- Multiplier for vertical recoil
@@ -250,7 +250,7 @@ SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 5 -- Not multiplied, but actually just added/subtracted.
 
 
-SWEP.ShootSound = "weapons/ba5/xm1014-1.wav"                            -- Fire
+SWEP.ShootSound = "bm16/bm16_fire1.wav"                            -- Fire
 
 SWEP.ShootSoundSilenced = ""                    -- Fire silenced
 
@@ -263,8 +263,12 @@ SWEP.ToggleAttSound = {
     "arc9/toggles/flashlight_laser_toggle_on_03.ogg",
 }
 
-SWEP.EnterSightsSound = ""
-SWEP.ExitSightsSound = ""
+local sightsenter = {"weapon_sightlower.wav", "weapon_sightlower2.wav"}
+
+local sightsexit = {"weapon_sightraise.wav", "weapon_sightraise2.wav"}
+
+SWEP.EnterSightsSound = sightsenter
+SWEP.ExitSightsSound = sightsexit
 
 
 
@@ -273,7 +277,7 @@ SWEP.BreathInSound = "arc9/breath_inhale.ogg"
 SWEP.BreathOutSound = "arc9/breath_exhale.ogg"
 SWEP.BreathRunOutSound = "arc9/breath_runout.ogg"
 
-SWEP.TriggerDownSound = ""
+SWEP.TriggerDownSound = "empty_shotguns.wav"
 SWEP.TriggerUpSound = ""
 
 
@@ -330,14 +334,14 @@ SWEP.BobWalkMult = 1 -- same but for all non sprint actions
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.221, -6.926, 1.5),
+    Pos = Vector(-2.329, -7.268, 1.978),
     Ang = Vector (0, 0, 0),
 }
 
 SWEP.HasSights = true
 
 -- Alternative "resting" position
-SWEP.ActivePos = Vector(-1, -4, -0.3)
+SWEP.ActivePos = Vector(-0.1, -2, -0.3)
 SWEP.ActiveAng = Angle(0, 0, -5)
 
 -- Position while walking/running (no sprint)
@@ -349,7 +353,7 @@ SWEP.CrouchPos = Vector(0, 0, 0)
 SWEP.CrouchAng = Angle(0, 0, -3)
 
 -- Position when sprinting or safe
-SWEP.RestPos = Vector(0, 0, 0)
+SWEP.RestPos = Vector(-3, -10, 3)
 SWEP.RestAng = Angle(0,-30, 0)
 
 
@@ -425,7 +429,9 @@ local foley_fast = {"handling/generic_cloth_movement9.wav", "handling/generic_cl
 
 local grip = {"handling/generic_grip_medium1.wav", "handling/generic_grip_light2.wav", "handling/generic_grip_light1.wav", "handling/generic_grip_heavy2.wav", "handling/generic_grip_heavy1.wav"}
 
+local deploy = {"weapon_deploy1.wav", "weapon_deploy2.wav", "weapon_deploy3.wav"}
 
+local holster = {"weapon_holster1.wav", "weapon_holster2.wav", "weapon_holster3.wav"}
 
 SWEP.Animations = {
      ["idle"] = {
@@ -447,21 +453,37 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
          EventTable = {
+		 {s = foley_fast , t = 0},
+		 {s = "toz34/toz34_open_start.wav", t = 0.3},
+		 {s = "toz34/toz34_pull_hammer.wav", t = 0.85},
+		 {s = foley_fast , t = 1.2},
+		 {s = "toz34/toz34_shell_in1.wav", t = 1.95},
+		 {s = "toz34/toz34_close.wav", t = 2.7},
+		 {s = grip , t = 3.25},
         }
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-        EventTable = {
+           EventTable = {
+		 {s = foley_fast , t = 0},
+		 {s = "toz34/toz34_open_start.wav", t = 0.3},
+		 {s = "toz34/toz34_pull_hammer.wav", t = 0.85},
+		 {s = foley_fast , t = 1.2},
+		 {s = "toz34/toz34_shell_in1.wav", t = 1.95},
+		 {s = "toz34/toz34_close.wav", t = 2.7},
+		 {s = grip , t = 3.25},
         }
     },
     ["draw"] = {
         Source = "draw",
          EventTable = {
+		 {s = deploy , t = 0},
         }
     },
     ["holster"] = {
         Source = "holster",
 		  EventTable = {
+		  {s = holster , t = 0},
         }
     },
 }

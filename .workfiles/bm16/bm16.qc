@@ -4,6 +4,11 @@ $modelname "arc9_fas2_bm16.mdl"
 
 $model "bm16" "bm16.dmx"
 
+$bodygroup "buck"
+{
+    studio "shots.dmx"
+}
+
 
 
 $cdmaterials "models\weapons\arc9_fas2\bm16\"
