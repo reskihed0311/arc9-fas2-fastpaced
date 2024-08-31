@@ -7,6 +7,7 @@ $model "bm16" "bm16.dmx"
 
 
 $cdmaterials "models\weapons\arc9_fas2\bm16\"
+$cdmaterials "models\weapons\arc9_fas2\ammo\"
 
 $attachment "1" "muzzle" 0.00 0.00 0.00 rotate -90 0 0
 

@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" 				"models\weapons\arc9_fas2\bm16\bm16_d"
+	"$bumpmap" 					"models\weapons\arc9_fas2\bm16\bm16_n"
+	"$envmap" 					"env_cubemap"
+	"$envmaptint" 				"[.01 .01 .01]"
+	//"$basemapalphaphongmask" 	"1"
+	"$phong" 					"1"
+	"$phongexponent" 			"50"
+	"$phongboost" 				".3"
+	"$phongfresnelranges"		"[0.5 1.5 3.0]"//"[0.1 0.4 .8]"
+	"$halflambert"				"1"
+}
