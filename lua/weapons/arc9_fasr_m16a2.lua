@@ -36,9 +36,9 @@ SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
 SWEP.MirrorVMWM = true -- Use this to use the viewmodel as a worldmodel.
 
 SWEP.WorldModelOffset = {
-     Pos = Vector(-13, 5, -3), -- non tpik (while on ground, on npc etc)
+     Pos = Vector(-10, 7, -3), -- non tpik (while on ground, on npc etc)
      Ang = Angle(0, 0, 180),
-     TPIKPos = Vector(-13, 5, -3), -- arc9_tpik 1, you can make cool poses with it
+     TPIKPos = Vector(-10, 7, -3), -- arc9_tpik 1, you can make cool poses with it
      TPIKAng = Angle(0, 0, 180),
      Scale = 1
  }
@@ -65,7 +65,7 @@ SWEP.CurvedDamageScaling = false -- If true, damage will scale in a quadratic cu
 SWEP.Num = 1 -- Number of bullets to shoot
 
 
-SWEP.Penetration = 0 -- Units of wood that can be penetrated by this gun.
+SWEP.Penetration = 0.5 -- Units of wood that can be penetrated by this gun. ARs
 
 
 SWEP.RicochetAngleMax = 0 -- Maximum angle at which a ricochet can occur. Between 1 and 90. Angle of 0 is impossible but would theoretically always ricochet.
@@ -420,7 +420,8 @@ SWEP.NonTPIKAnimMelee = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 
 
 
-
+SWEP.HideBones = {"mag2"} -- bones to hide in third person and customize menu. {"list", "of", "bones"}
+SWEP.ReloadHideBoneTables = {}
 
 
 

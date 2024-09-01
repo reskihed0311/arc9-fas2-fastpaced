@@ -65,7 +65,7 @@ SWEP.CurvedDamageScaling = false -- If true, damage will scale in a quadratic cu
 SWEP.Num = 1 -- Number of bullets to shoot
 
 
-SWEP.Penetration = 0 -- Units of wood that can be penetrated by this gun.
+SWEP.Penetration = 0.35 -- Units of wood that can be penetrated by this gun.
 
 
 SWEP.RicochetAngleMax = 0 -- Maximum angle at which a ricochet can occur. Between 1 and 90. Angle of 0 is impossible but would theoretically always ricochet.
@@ -218,8 +218,8 @@ SWEP.FreeAimRadiusMultSights = 0
 
 SWEP.SwayMultSights = 0
 
-SWEP.AimDownSightsTime = 0.20 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.10 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.45 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.35 -- How long it takes to go from sprinting to being able to fire.
 
 SWEP.MagnificationZoomSpeed = 1 -- Multiply how quickly the FOV adjusts itself when entering or exiting the sights, or when toggling from one sight to another.
 
