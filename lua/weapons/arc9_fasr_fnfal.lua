@@ -65,7 +65,7 @@ SWEP.CurvedDamageScaling = false -- If true, damage will scale in a quadratic cu
 SWEP.Num = 1 -- Number of bullets to shoot
 
 
-SWEP.Penetration = 0.5 -- Units of wood that can be penetrated by this gun. ARs
+SWEP.Penetration = 0.9 -- Units of wood that can be penetrated by this gun. ARs
 
 
 SWEP.RicochetAngleMax = 0 -- Maximum angle at which a ricochet can occur. Between 1 and 90. Angle of 0 is impossible but would theoretically always ricochet.
