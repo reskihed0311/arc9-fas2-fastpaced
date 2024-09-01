@@ -279,7 +279,7 @@ SWEP.BreathInSound = "arc9/breath_inhale.ogg"
 SWEP.BreathOutSound = "arc9/breath_exhale.ogg"
 SWEP.BreathRunOutSound = "arc9/breath_runout.ogg"
 
-SWEP.TriggerDownSound = ""
+SWEP.TriggerDownSound = "empty_submachineguns.wav"
 SWEP.TriggerUpSound = ""
 
 
@@ -425,6 +425,19 @@ SWEP.NonTPIKAnimMelee = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 
 
 SWEP.Attachments = {
+
+
+    {
+        
+        PrintName = "Dovetail Mount",
+        DefaultName = "No Mounts",
+        Category = {"fas_dovetail"},
+        Bone = "weapon",
+        Pos = Vector(1, -0.5, 0),
+        Ang = Angle(90, 0, -90),
+        
+    },
+
 }
 
 local deploy = {"weapon_deploy1.wav", "weapon_deploy2.wav", "weapon_deploy3.wav"}

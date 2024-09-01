@@ -1,0 +1,9 @@
+"UnlitGeneric"
+
+{
+	"$basetexture"	"models\hud\rets\reflex/cmore"
+	"$additive"	"1"
+	"$vertexcolor"	"1"
+	"$vertexalpha"	"1"
+	"$translucent" 	"1"
+}
