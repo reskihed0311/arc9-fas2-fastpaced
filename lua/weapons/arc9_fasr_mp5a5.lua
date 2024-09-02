@@ -421,7 +421,7 @@ SWEP.NonTPIKAnimMelee = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 
 
 
-
+SWEP.DefaultBodygroups = "00000000000000000000000"
 
 
 SWEP.Attachments = {
