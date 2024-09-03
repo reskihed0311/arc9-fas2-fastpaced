@@ -8,7 +8,7 @@ SWEP.Spawnable = true
 SWEP.Category = "ARC9 - FA:S Fast Paced"
 SWEP.SubCategory = "Designated Marksman Rifles"
 SWEP.AdminOnly = false
-SWEP.Slot = 2
+SWEP.Slot = 3
 
 SWEP.RecoilKick = 0 -- Camera recoil
 
