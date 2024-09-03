@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models\hud\rets\magnified\acog"
+	"$translucent"		"1"
+	"$model" "1"
+}

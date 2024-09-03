@@ -49,14 +49,14 @@ SWEP.ViewModelFOVBase = 70-- Set to override viewmodel FOV
 
 
 
-SWEP.DamageMax = 38 -- Damage done at point blank range
-SWEP.DamageMin = 30 -- Damage done at maximum range
+SWEP.DamageMax = 78 -- Damage done at point blank range
+SWEP.DamageMin = 67 -- Damage done at maximum range
 SWEP.ImpactForce = 0 -- Force that bullets apply on hit
 
 
 SWEP.RangeMin = -1 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 7500-- In Hammer units, how far bullets can travel before dealing DamageMin.
-SWEP.Distance = 8000 -- In Hammer units, how far bullets can travel, period.
+SWEP.RangeMax = 8500-- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.Distance = 10000 -- In Hammer units, how far bullets can travel, period.
 
 
 SWEP.CurvedDamageScaling = false -- If true, damage will scale in a quadratic curve between RangeMin and RangeMax. If false, damage will scale linearly.
@@ -78,8 +78,8 @@ SWEP.DamageType = DMG_BULLET
 
 
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 1.1,
-    [HITGROUP_CHEST] = 1.05,
+    [HITGROUP_HEAD] = 1.15,
+    [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 1,
     [HITGROUP_RIGHTARM] = 1,
@@ -193,11 +193,11 @@ SWEP.RecoilAutoControl = 0 -- Multiplier for automatic recoil control.
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.0005 -- sperad ARs Long
+SWEP.Spread = 0.0003 -- sperad DMRs
 
-SWEP.SpreadAddMove = 0.035-- Applied when speed is equal to walking speed.
+SWEP.SpreadAddMove = 0.1-- Applied when speed is equal to walking speed.
 SWEP.SpreadAddMidAir = 0.040 -- Applied when not touching the ground.
-SWEP.SpreadAddHipFire = 0.015 -- Applied when not sighted.
+SWEP.SpreadAddHipFire = 0.09 -- Applied when not sighted.
 SWEP.SpreadAddSighted = -0.005 -- Applied when sighted. Can be negative.
 
 
@@ -299,7 +299,7 @@ SWEP.AfterShotParticleDelay = 0.01 -- Delay before spawning the particle
 SWEP.ShellEffectCount = 1
 SWEP.NoShellEject = true
 
-SWEP.ShellModel = "models/shells/shell_556.mdl"
+SWEP.ShellModel = "models/shells/shell_762nato.mdl"
 
 
 SWEP.ShellSmoke = true
