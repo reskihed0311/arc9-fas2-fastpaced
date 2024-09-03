@@ -426,6 +426,17 @@ SWEP.ReloadHideBoneTables = {}
 
 
 SWEP.Attachments = {
+
+    {
+   
+        PrintName = "Carry Handle",
+        DefaultName = "It's there",
+        Category = {"fas_chandle"},
+        Bone = "weapon",
+        Pos = Vector(0, -4.7, 1.5),
+        Ang = Angle(90, 0, -90),
+    },
+	
 }
 
 local deploy = {"weapon_deploy1.wav", "weapon_deploy2.wav", "weapon_deploy3.wav"}

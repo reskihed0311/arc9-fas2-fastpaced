@@ -429,7 +429,14 @@ SWEP.DefaultBodygroups = "00000000000000000000000"
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local eles = data.elements
     local mdl = data.model
+
+    if data.elements["fas_chandle"] then
+        -- Do not modify the bodygroup if fas_chandle is present
+        return
+    end
+
     if data.elements["fas_opticmedium"] then
+        -- Modify the bodygroup for fas_opticmedium
         mdl:SetBodygroup(1, 1)
     end
 end
@@ -443,11 +450,32 @@ SWEP.Attachments = {
 
     {
    
+        PrintName = "Carry Handle",
+        DefaultName = "It's there",
+        Category = {"fas_chandle"},
+        Bone = "weapon",
+        Pos = Vector(0, -5.5, 1.5),
+        Ang = Angle(90, 0, -90),
+    },
+
+    {
+   
         PrintName = "Optic",
         DefaultName = "Iron Sights",
         Category = {"fas_opticmedium"},
+        ExcludeElements = {"fas_chandle"},
         Bone = "weapon",
         Pos = Vector(0, -3.6, 1),
+        Ang = Angle(90, 0, -90),
+    },
+	
+	    {
+   
+        PrintName = "Underbarel",
+        DefaultName = "None",
+        Category = {"fas_grip"},
+        Bone = "weapon",
+        Pos = Vector(0, -1.5, 10),
         Ang = Angle(90, 0, -90),
     },
 }
@@ -494,6 +522,23 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
+		 IKTimeLine = { -- t is in fraction of animation
+        {
+            t = 0.1,
+           lhik = 0,
+            rhik = 0,
+        },
+        {
+            t = 0.88,
+            lhik = 0,
+            rhik = 0,
+        },
+        {
+           t = 0.99,
+           lhik = 1,
+           rhik = 0,
+       },
+    },
         EventTable = {
 			{s = "handling/generic_magpouch_smg1.wav" , t = 0},
 		{s = foley_fast , t = 0.5},
@@ -505,6 +550,23 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
+		 IKTimeLine = { -- t is in fraction of animation
+        {
+            t = 0.1,
+           lhik = 0,
+            rhik = 0,
+        },
+        {
+            t = 0.88,
+            lhik = 0,
+            rhik = 0,
+        },
+        {
+           t = 0.99,
+           lhik = 1,
+           rhik = 0,
+       },
+    },
         EventTable = {
 		{s = foley_fast , t = 0},
 		{s = "m4a1/m4_magout_empty.wav", t = 0.45},
