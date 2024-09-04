@@ -422,6 +422,19 @@ SWEP.NonTPIKAnimMelee = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 
 
 SWEP.Attachments = {
+
+
+    {
+   
+        PrintName = "The Haji Mount",
+        DefaultName = "Nothing",
+        Category = {"fas_chandle"},
+        Bone = "weapon",
+        Pos = Vector(0, -3.5, 1),
+        Ang = Angle(90, 0, -90),
+    },
+
+
 }
 
 local deploy = {"weapon_deploy1.wav", "weapon_deploy2.wav", "weapon_deploy3.wav"}

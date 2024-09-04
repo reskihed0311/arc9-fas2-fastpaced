@@ -276,7 +276,7 @@ SWEP.BreathInSound = "arc9/breath_inhale.ogg"
 SWEP.BreathOutSound = "arc9/breath_exhale.ogg"
 SWEP.BreathRunOutSound = "arc9/breath_runout.ogg"
 
-SWEP.TriggerDownSound = "empty_assaultrifles.wav"
+SWEP.TriggerDownSound = "empty_sniperrifles.wav"
 SWEP.TriggerUpSound = ""
 
 
