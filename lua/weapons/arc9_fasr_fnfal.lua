@@ -144,7 +144,7 @@ SWEP.DryFireDelay = false -- Set to set time, otherwise uses animation length--]
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 450
+SWEP.RPM = 600
 
 
 
@@ -157,6 +157,10 @@ SWEP.RPM = 450
 -- 3: Three-round burst.
 -- n: n-round burst.
 SWEP.Firemodes = {
+    {
+        Mode = -1,
+        -- add other attachment modifiers
+    },
     {
         Mode = 1,
         -- add other attachment modifiers
@@ -176,11 +180,11 @@ SWEP.RecoilLookupTable = nil -- Use to set specific values for predictible recoi
 SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if we run out in the main table
 
 -- General recoil multiplier
-SWEP.Recoil = 1.8
+SWEP.Recoil = 1.2
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 1.1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.6 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1.8 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
