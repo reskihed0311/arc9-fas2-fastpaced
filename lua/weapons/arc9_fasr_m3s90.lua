@@ -492,6 +492,7 @@ SWEP.Animations = {
     },
 	    ["reload_start_empty"] = {
         Source = "reload_start_empty",
+		RestoreAmmo = 1, -- Restores ammunition to clip
          EventTable = {
 		 {s = foley_fast , t = 0},
 		 {s = "m3s90/m3s90_load_ejectorport.wav", t = 0.6},
