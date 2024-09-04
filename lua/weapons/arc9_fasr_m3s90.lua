@@ -421,6 +421,17 @@ SWEP.NonTPIKAnimMelee = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 SWEP.Attachments = {
 
 
+    {
+   
+        PrintName = "Rail Mount",
+        DefaultName = "None",
+        Category = {"fas_unirail_optic"},
+        Bone = "weapon",
+        Pos = Vector(0, -3.4, 4.5),
+        Ang = Angle(90, 0, -90),
+    },
+
+
 }
 
 

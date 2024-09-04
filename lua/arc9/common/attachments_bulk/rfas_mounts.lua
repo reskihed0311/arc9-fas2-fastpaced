@@ -59,3 +59,35 @@ ATT.Attachments = {
 
 ARC9.LoadAttachment(ATT, "r_fas_carryhandle_railb")
 
+
+///////////////////////////////////////      r_fas_unirail_railb
+
+
+ATT = {}
+
+ATT.PrintName = "Universal Rail"
+ATT.Description = [[Mount things on it.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "reshed"
+ATT.Free = false
+
+ATT.Category = {"fas_unirail_optic"}
+ATT.Model = "models/accs/mounts/fas_unimount.mdl"
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0)
+
+ATT.Attachments = {
+    {
+        PrintName = "Optic",
+        Pos = Vector(0.5, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1.5),
+        Category = {"fas_opticmedium"},
+    }
+}
+
+
+ARC9.LoadAttachment(ATT, "r_fas_unirail_railb")
+
+
+
