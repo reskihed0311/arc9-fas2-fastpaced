@@ -500,7 +500,7 @@ SWEP.Animations = {
         }
     },
 	    ["reload_insert"] = {
-        Source = "reload_loop",
+        Source = {"reload_loop", "reload_loop_2", "reload_loop_3"},
          EventTable = {
 		 {s = foley_fast , t = 0},
 		 {s = shellin , t = 0.3},

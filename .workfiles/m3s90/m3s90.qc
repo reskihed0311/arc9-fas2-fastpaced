@@ -117,6 +117,21 @@ $sequence "reload_loop" {
 	fps 30
 }
 
+$sequence "reload_loop_2" {
+	"anims\reload_loop_2.dmx"
+	activity "ACT_VM_RELOAD" 1
+	snap
+	fps 30
+}
+
+$sequence "reload_loop_3" {
+	"anims\reload_loop_3.dmx"
+	activity "ACT_VM_RELOAD" 1
+	snap
+	fps 30
+}
+
+
 $sequence "reload_end" {
 	"anims\reload_end.dmx"
 	activity "ACT_VM_RELOAD" 1
