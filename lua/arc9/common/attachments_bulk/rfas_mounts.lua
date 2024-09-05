@@ -1,6 +1,6 @@
 local ATT = {}
 
-///////////////////////////////////////      r_fas_dovetail_mountb
+///////////////////////////////////////      rfas_akrailmount
 
 
 ATT = {}
@@ -27,10 +27,10 @@ ATT.Attachments = {
 }
 
 
-ARC9.LoadAttachment(ATT, "r_fas_dovetail_mountb")
+ARC9.LoadAttachment(ATT, "rfas_akrailmount")
 
 
-///////////////////////////////////////      r_fas_carryhandle_railb
+///////////////////////////////////////      rfas_carryhandlerail
 
 
 ATT = {}
@@ -57,10 +57,10 @@ ATT.Attachments = {
 }
 
 
-ARC9.LoadAttachment(ATT, "r_fas_carryhandle_railb")
+ARC9.LoadAttachment(ATT, "rfas_carryhandlerail")
 
 
-///////////////////////////////////////      r_fas_unirail_railb
+///////////////////////////////////////      rfas_unirailoptic
 
 
 ATT = {}
@@ -87,7 +87,7 @@ ATT.Attachments = {
 }
 
 
-ARC9.LoadAttachment(ATT, "r_fas_unirail_railb")
+ARC9.LoadAttachment(ATT, "rfas_unirailoptic")
 
 
 

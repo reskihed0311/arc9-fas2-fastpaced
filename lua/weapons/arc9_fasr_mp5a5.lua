@@ -424,7 +424,30 @@ SWEP.NonTPIKAnimMelee = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 SWEP.DefaultBodygroups = "00000000000000000000000"
 
 
+SWEP.AttachmentElements = {
+
+    ["MP5_HG"] = {
+	
+	Bodygroups = {
+	{1, 1}
+	},
+	}
+}
+
+
 SWEP.Attachments = {
+
+    {
+   
+        PrintName = "Handguard",
+        DefaultName = "Default",
+        Category = {"fas_mp5hg"},
+        Bone = "weapon",
+        Pos = Vector(0, -2, 8),
+        Ang = Angle(90, 0, -90),
+    },
+
+
 }
 
 local deploy = {"weapon_deploy1.wav", "weapon_deploy2.wav", "weapon_deploy3.wav"}
@@ -464,6 +487,23 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
+		 IKTimeLine = { -- t is in fraction of animation
+        {
+            t = 0.1,
+           lhik = 0,
+            rhik = 0,
+        },
+        {
+            t = 0.88,
+            lhik = 0,
+            rhik = 0,
+        },
+        {
+           t = 0.99,
+           lhik = 1,
+           rhik = 0,
+       },
+    },
         EventTable = {
 		{s = foley_fast , t = 0},
 		{s = "mp5/mp5_magout.wav", t = 0.6},
@@ -477,6 +517,23 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
+		 IKTimeLine = { -- t is in fraction of animation
+        {
+            t = 0.1,
+           lhik = 0,
+            rhik = 0,
+        },
+        {
+            t = 0.88,
+            lhik = 0,
+            rhik = 0,
+        },
+        {
+           t = 0.99,
+           lhik = 1,
+           rhik = 0,
+       },
+    },
         EventTable = {
 		{s = foley_fast , t = 0},
 		{s = "mp5/mp5_boltback.wav", t = 0.22},
