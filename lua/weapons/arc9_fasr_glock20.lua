@@ -258,9 +258,12 @@ SWEP.ToggleAttSound = {
     "arc9/toggles/flashlight_laser_toggle_on_03.ogg",
 }
 
-SWEP.EnterSightsSound = ""
-SWEP.ExitSightsSound = ""
+local sightsenter = {"weapon_sightlower.wav", "weapon_sightlower2.wav"}
 
+local sightsexit = {"weapon_sightraise.wav", "weapon_sightraise2.wav"}
+
+SWEP.EnterSightsSound = sightsenter
+SWEP.ExitSightsSound = sightsexit
 
 
 
@@ -420,6 +423,10 @@ SWEP.Attachments = {
 }
 
 
+local deploy = {"weapon_deploy1.wav", "weapon_deploy2.wav", "weapon_deploy3.wav"}
+
+local holster = {"weapon_holster1.wav", "weapon_holster2.wav", "weapon_holster3.wav"}
+
 local foley_fast = {"handling/generic_cloth_movement9.wav", "handling/generic_cloth_movement8.wav", "handling/generic_cloth_movement7.wav", "handling/generic_cloth_movement6.wav", "handling/generic_cloth_movement5.wav", "handling/generic_cloth_movement4.wav", "handling/generic_cloth_movement3.wav", "handling/generic_cloth_movement2.wav", "handling/generic_cloth_movement16.wav", "handling/generic_cloth_movement15.wav", "handling/generic_cloth_movement14.wav", "handling/generic_cloth_movement13.wav", "handling/generic_cloth_movement12.wav", "handling/generic_cloth_movement11.wav", "handling/generic_cloth_movement10.wav", "handling/generic_cloth_movement1.wav"}
 
 local grip = {"handling/generic_grip_medium1.wav", "handling/generic_grip_light2.wav", "handling/generic_grip_light1.wav", "handling/generic_grip_heavy2.wav", "handling/generic_grip_heavy1.wav"}
@@ -481,14 +488,26 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
+				     EventTable = {
+		    {s = deploy, t = 0},
+        }
     },
     ["draw_empty"] = {
         Source = "draw_empty",
+				     EventTable = {
+		    {s = deploy, t = 0},
+        }
     },
     ["holster_empty"] = {
         Source = "holster_empty",
+				     EventTable = {
+		    {s = deploy, t = 0},
+        }
     },
     ["holster"] = {
-        Source = "holster_empty",
+        Source = "holster",
+				     EventTable = {
+		    {s = deploy, t = 0},
+        }
     },
     }

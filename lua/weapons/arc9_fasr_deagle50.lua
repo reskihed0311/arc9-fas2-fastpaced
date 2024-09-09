@@ -49,14 +49,14 @@ SWEP.ViewModelFOVBase = 70-- Set to override viewmodel FOV
 
 
 
-SWEP.DamageMax = 34-- Damage done at point blank range
-SWEP.DamageMin = 10 -- Damage done at maximum range
+SWEP.DamageMax = 42-- Damage done at point blank range
+SWEP.DamageMin = 38 -- Damage done at maximum range
 SWEP.ImpactForce = 0 -- Force that bullets apply on hit
 
 
 SWEP.RangeMin = 0 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 2500-- In Hammer units, how far bullets can travel before dealing DamageMin.
-SWEP.Distance = 5000 -- In Hammer units, how far bullets can travel, period.
+SWEP.RangeMax = 1500-- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.Distance = 7000 -- In Hammer units, how far bullets can travel, period.
 
 
 SWEP.CurvedDamageScaling = false -- If true, damage will scale in a quadratic curve between RangeMin and RangeMax. If false, damage will scale linearly.
@@ -77,9 +77,9 @@ SWEP.DamageType = DMG_BULLET
 
 
 
---damage mults for pistols
+--damage mults for pistols revovler style
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 2,
+    [HITGROUP_HEAD] = 2.2,
     [HITGROUP_CHEST] = 1.25,
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 1,
@@ -110,7 +110,7 @@ SWEP.TracerSize = 5
 SWEP.Ammo = "pistol" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 15 -- Self-explanatory.
+SWEP.ClipSize = 7 -- Self-explanatory.
 SWEP.SupplyLimit = 5 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
@@ -144,7 +144,7 @@ SWEP.DryFireDelay = false -- Set to set time, otherwise uses animation length--]
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 1200
+SWEP.RPM = 450
 
 
 
@@ -176,10 +176,10 @@ SWEP.RecoilLookupTable = nil -- Use to set specific values for predictible recoi
 SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if we run out in the main table
 
 -- General recoil multiplier
-SWEP.Recoil = 1.5
+SWEP.Recoil = 3.5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 1.5 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 2.0-- Multiplier for vertical recoil
 SWEP.RecoilSide = 2.2 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
@@ -245,9 +245,9 @@ SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 5 -- Not multiplied, but actually just added/subtracted.
 
 
-SWEP.ShootSound = "glock20/glock20_fire1.wav"                            -- Fire
+SWEP.ShootSound = "deagle/de_fire1.wav"                            -- Fire
 
-SWEP.ShootSoundSilenced = "glock20/glock20_suppressed_fire1.wav"                    -- Fire silenced
+SWEP.ShootSoundSilenced = "deagle/de_suppressed_fire1.wav"                    -- Fire silenced
 
 
 
@@ -258,8 +258,12 @@ SWEP.ToggleAttSound = {
     "arc9/toggles/flashlight_laser_toggle_on_03.ogg",
 }
 
-SWEP.EnterSightsSound = ""
-SWEP.ExitSightsSound = ""
+local sightsenter = {"weapon_sightlower.wav", "weapon_sightlower2.wav"}
+
+local sightsexit = {"weapon_sightraise.wav", "weapon_sightraise2.wav"}
+
+SWEP.EnterSightsSound = sightsenter
+SWEP.ExitSightsSound = sightsexit
 
 
 
@@ -298,10 +302,10 @@ SWEP.ShellSmoke = true
 
 
 
-SWEP.ShellScale = 1
+SWEP.ShellScale = 1.5
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
-SWEP.ShellPitch = 100 -- for shell sounds
+SWEP.ShellPitch = 80 -- for shell sounds
 SWEP.ShellSounds = ARC9.ShellSoundsTable
 
 SWEP.RicochetSounds = ARC9.RicochetSounds
@@ -327,7 +331,7 @@ SWEP.BobWalkMult = 1 -- same but for all non sprint actions
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.381, -8.028, 0.639),
+    Pos = Vector(-3.939, -6.723, 1.381),
 }
 
 SWEP.HasSights = true
@@ -419,6 +423,9 @@ SWEP.Attachments = {
 
 }
 
+local deploy = {"weapon_deploy1.wav", "weapon_deploy2.wav", "weapon_deploy3.wav"}
+
+local holster = {"weapon_holster1.wav", "weapon_holster2.wav", "weapon_holster3.wav"}
 
 local foley_fast = {"handling/generic_cloth_movement9.wav", "handling/generic_cloth_movement8.wav", "handling/generic_cloth_movement7.wav", "handling/generic_cloth_movement6.wav", "handling/generic_cloth_movement5.wav", "handling/generic_cloth_movement4.wav", "handling/generic_cloth_movement3.wav", "handling/generic_cloth_movement2.wav", "handling/generic_cloth_movement16.wav", "handling/generic_cloth_movement15.wav", "handling/generic_cloth_movement14.wav", "handling/generic_cloth_movement13.wav", "handling/generic_cloth_movement12.wav", "handling/generic_cloth_movement11.wav", "handling/generic_cloth_movement10.wav", "handling/generic_cloth_movement1.wav"}
 
@@ -460,35 +467,47 @@ SWEP.Animations = {
         Source = "reload",
         EventTable = {
 		{s = foley_fast, t = 0},
-            {s = "glock20/glock20_magout.wav", t = 0.48},
-			{s = "glock20/glock20_magin.wav", t = 1},
-			{s = foley_fast, t = 1.3},
-			{s = grip, t = 1.9},
-          
+		{s = "handling/generic_magpouch_smg1.wav" , t = 0.3},
+		{s = "deagle/de_magout.wav", t = 0.75},
+		{s = foley_fast, t = 0.9},
+         {s = "deagle/de_magin_nomen.wav", t = 1.3}, 
+		 {s = grip, t = 1.9},
         }
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         EventTable = {
 		    {s = foley_fast, t = 0},
-            {s = "glock20/glock20_magout_empty.wav", t = 0.38},
-			{s = "glock20/glock20_magin.wav", t = 1.42},
-			{s = "glock20/glock20_sliderelease.wav", t = 1.62},
-			{s = foley_fast, t = 1.9},
-			{s = grip, t = 2.8},
-      
+			{s = "deagle/de_magout_empty.wav" , t = 0.25},
+			{s = foley_fast, t = 0.55},
+      {s = "deagle/de_magin.wav" , t = 1.3},
+	   {s = "deagle/de_sliderelease.wav" , t = 1.8},
+	   {s = foley_fast, t = 1.95},
+	   {s = grip, t = 2.1},
         }
     },
     ["draw"] = {
         Source = "draw",
+				     EventTable = {
+		    {s = deploy, t = 0},
+        }
     },
     ["draw_empty"] = {
         Source = "draw_empty",
+				     EventTable = {
+		    {s = deploy, t = 0},
+        }
     },
     ["holster_empty"] = {
         Source = "holster_empty",
+				     EventTable = {
+		    {s = deploy, t = 0},
+        }
     },
     ["holster"] = {
-        Source = "holster_empty",
+        Source = "holster",
+				     EventTable = {
+		    {s = deploy, t = 0},
+        }
     },
     }
