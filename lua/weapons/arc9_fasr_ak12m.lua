@@ -180,11 +180,11 @@ SWEP.RecoilLookupTable = nil -- Use to set specific values for predictible recoi
 SWEP.RecoilLookupTableOverrun = nil -- Repeatedly take values from this table if we run out in the main table
 
 -- General recoil multiplier
-SWEP.Recoil = 1.25
+SWEP.Recoil = 1
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.88 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.35 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.50 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -426,21 +426,6 @@ SWEP.ReloadHideBoneTables = {}
 
 
 SWEP.DefaultBodygroups = "00000000000000000000000"
-SWEP.Hook_ModifyBodygroups = function(wep, data)
-    local eles = data.elements
-    local mdl = data.model
-
-    if data.elements["fas_chandle"] then
-        -- Do not modify the bodygroup if fas_chandle is present
-        return
-    end
-
-    if data.elements["fas_opticmedium"] then
-        -- Modify the bodygroup for fas_opticmedium
-        mdl:SetBodygroup(1, 1)
-    end
-end
-
 
 
 
@@ -455,7 +440,7 @@ SWEP.Attachments = {
         Category = {"fas_opticmedium"},
         ExcludeElements = {"fas_chandle"},
         Bone = "weapon",
-        Pos = Vector(0, -3.6, 1),
+        Pos = Vector(0, -3.6, 1.5),
         Ang = Angle(90, 0, -90),
     },
 	
@@ -465,7 +450,7 @@ SWEP.Attachments = {
         DefaultName = "None",
         Category = {"fas_grip"},
         Bone = "weapon",
-        Pos = Vector(0, -1.5, 10),
+        Pos = Vector(0, -1.1, 10),
         Ang = Angle(90, 0, -90),
     },
 }
