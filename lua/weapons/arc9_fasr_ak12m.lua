@@ -502,9 +502,14 @@ SWEP.Animations = {
        },
     },
         EventTable = {
+		{s = foley_fast , t = 0},
+		{s = "handling/generic_magpouch1.wav" , t = 0.4},
 		{s = "ak400/ak400_magout.wav", t = 0.85},
+		{s = foley_fast , t = 0.9},
 		{s = "ak400/ak400_maginsert.wav", t = 1.11},
 		{s = "ak400/ak400_magin.wav", t = 1.25},
+		{s = foley_fast , t = 1.55},
+		{s = grip , t = 2.1},
         },
     },
     ["reload_empty"] = {
@@ -527,11 +532,17 @@ SWEP.Animations = {
        },
     },
         EventTable = { 
+		{s = foley_fast , t = 0},
 		{s = "ak400/ak400_magout.wav", t = 0.40},
+		{s = foley_fast , t = 1},
+		{s = "handling/generic_magpouch1.wav" , t = 1.3},
 		{s = "ak400/ak400_maginsert.wav", t = 1.5},
 		{s = "ak400/ak400_magin.wav", t = 1.68},
+		{s = foley_fast , t = 1.9},
 		{s = "ak400/ak400_boltback.wav", t = 2.25},
 		{s = "ak400/ak400_boltforward.wav", t = 2.43},
+		{s = foley_fast , t = 2.55},
+		{s = grip , t = 2.7},
         },
 	},
     
