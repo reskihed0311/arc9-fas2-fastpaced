@@ -496,7 +496,7 @@ SWEP.Animations = {
         Source = "idle_empty",
     },
     ["fire_empty"] = {
-        Source = "idle_empty",
+        Source = "fire_empty",
         EjectAt = 0,
 
     },
@@ -598,7 +598,7 @@ SWEP.Animations = {
         }
     },
     ["holster"] = {
-        Source = "holster_empty",
+        Source = "holster",
 			     EventTable = {
 		    {s = holster, t = 0},
         }
