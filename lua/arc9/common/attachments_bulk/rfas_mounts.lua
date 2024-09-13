@@ -13,13 +13,13 @@ ATT.Free = false
 
 ATT.Category = {"fas_dovetail"}
 ATT.Model = "models/accs/mounts/fas_akmount.mdl"
-ATT.Scale = 1
+ATT.Scale = 1.3
 ATT.ModelOffset = Vector(-0.8, 0.43, 1.4)
 
 ATT.Attachments = {
     {
         PrintName = "Optic",
-        Pos = Vector(1, 0.9, -2.1),
+        Pos = Vector(0.75, 1, -2.5),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 1.5),
         Category = {"fas_opticmedium"},
