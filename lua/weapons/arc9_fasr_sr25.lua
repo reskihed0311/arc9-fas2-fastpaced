@@ -110,7 +110,7 @@ SWEP.TracerSize = 5
 SWEP.Ammo = "smg1" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 20 -- Self-explanatory.
+SWEP.ClipSize = 1 -- Self-explanatory.
 SWEP.SupplyLimit = 5 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
@@ -126,15 +126,15 @@ SWEP.CanFireUnderwater = false -- This weapon can shoot while underwater.
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 
---[[SWEP.DropMagazineModel = "models/mags/m9k_mag_honeybadger.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel = "models/mags/arc9_mag_sr25_20.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_hard2.wav", "physics/metal/weapon_impact_hard1.wav", "physics/metal/weapon_impact_hard3.wav"} -- Table of sounds a dropped magazine should play.
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineSkin = 0 -- Model skin of mag.
 SWEP.DropMagazineTime = nil
 SWEP.DropMagazineQCA = nil -- QC Attachment drop mag from, would drop from shell port if not defined
-SWEP.DropMagazinePos = Vector(-1.5, 1, 0) -- offsets
-SWEP.DropMagazineAng = Angle(90, 0, 180 )
-SWEP.DropMagazineVelocity = Vector(0, -50, 0) -- Put something here if your anim throws the mag with force
+SWEP.DropMagazinePos = Vector(-1.5, -3, 0) -- offsets
+SWEP.DropMagazineAng = Angle(-90, -90, 0 )
+SWEP.DropMagazineVelocity = Vector(0, 0, 0) -- Put something here if your anim throws the mag with force
 
 SWEP.BarrelLength = 0 -- Distance for nearwalling
 
@@ -417,7 +417,12 @@ SWEP.NonTPIKAnimMelee = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 
 
 SWEP.HideBones = {"mag2"} -- bones to hide in third person and customize menu. {"list", "of", "bones"}
-SWEP.ReloadHideBoneTables = {}
+SWEP.ReloadHideBoneTables = {
+
+ [1] = {"mag"} 
+
+}
+
 
 SWEP.DefaultBodygroups = "00000000000000000000000"
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -512,6 +517,7 @@ SWEP.Animations = {
        },
     },
         EventTable = {
+		
 		{s = "handling/generic_magpouch_smg1.wav", t = 0},
 		{s = "sr25/sr25_magout.wav", t = 0.9},
 		{s = foley_fast , t = 1},
@@ -523,6 +529,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
+		DropMagAt = 0.65,
 		 IKTimeLine = { -- t is in fraction of animation
         {
             t = 0.1,
@@ -549,6 +556,8 @@ SWEP.Animations = {
 		{s = foley_fast , t = 2},
 		{s = "sr25/sr25_boltcatchslap.wav", t = 2.42},
 		{s = grip , t = 2.8},
+		{hide = 1 , t = 0.65},
+		{hide = 0 , t = 1.5},
         },
 	},
     

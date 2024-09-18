@@ -126,15 +126,15 @@ SWEP.CanFireUnderwater = false -- This weapon can shoot while underwater.
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 
---[[SWEP.DropMagazineModel = "models/mags/m9k_mag_honeybadger.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel = "models/mags/arc9_mag_vss_20.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_hard2.wav", "physics/metal/weapon_impact_hard1.wav", "physics/metal/weapon_impact_hard3.wav"} -- Table of sounds a dropped magazine should play.
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineSkin = 0 -- Model skin of mag.
 SWEP.DropMagazineTime = nil
 SWEP.DropMagazineQCA = nil -- QC Attachment drop mag from, would drop from shell port if not defined
-SWEP.DropMagazinePos = Vector(-1.5, 1, 0) -- offsets
-SWEP.DropMagazineAng = Angle(90, 0, 180 )
-SWEP.DropMagazineVelocity = Vector(0, -50, 0) -- Put something here if your anim throws the mag with force
+SWEP.DropMagazinePos = Vector(-1.5, -2, 0) -- offsets
+SWEP.DropMagazineAng = Angle(-90, -70, 0 )
+SWEP.DropMagazineVelocity = Vector(0, 0, 70) -- Put something here if your anim throws the mag with force
 
 SWEP.BarrelLength = 0 -- Distance for nearwalling
 
@@ -417,7 +417,11 @@ SWEP.NonTPIKAnimMelee = ACT_GMOD_GESTURE_MELEE_SHOVE_2HAND
 
 
 SWEP.HideBones = {"mag2"} -- bones to hide in third person and customize menu. {"list", "of", "bones"}
-SWEP.ReloadHideBoneTables = {}
+SWEP.ReloadHideBoneTables = {
+
+ [1] = {"mag"} 
+
+}
 
 SWEP.DefaultBodygroups = "00000000000000000000000"
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -492,12 +496,15 @@ SWEP.Animations = {
        },
     },
         EventTable = {
+		
+		{hide = 1 , t = 2},
 		{s = "ak74/ak74_magout.wav", t = 0.75},
 		{s = "ak74/ak74_magin.wav", t = 1.25},
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
+		 DropMagAt = 1.1, -- Drop magazine at this time
 		 IKTimeLine = { -- t is in fraction of animation
         {
             t = 0.1,
@@ -516,6 +523,7 @@ SWEP.Animations = {
        },
     },
         EventTable = {
+		{hide = 1 , t = 1.1},
 		{s = "ak74/ak74_magout_empty_nomen.wav", t = 0.8},
 		{s = "ak74/ak74_magin.wav", t = 1.30},
 		{s = "ak47/ak47_boltback.wav", t = 1.85},
